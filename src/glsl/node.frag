@@ -1,7 +1,6 @@
 precision highp float;
 
 uniform float time;
-uniform float alpha;
 
 varying vec3 vPosition;
 varying vec3 vColor;
@@ -12,5 +11,6 @@ void main() {
   vec3 normal = normalize(cross(dFdx(vPosition), dFdy(vPosition)));
   float diff = pow((dot(normal, light) + 1.0) / 2.0, 10.0);
 
-  gl_FragColor = vec4(vColor, diff * alpha + 0.1*alpha);
+
+  gl_FragColor = vec4(vColor, diff*0.6);
 }

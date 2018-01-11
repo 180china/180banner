@@ -5,15 +5,11 @@ const glslify = require('glslify');
 export default class Node {
   constructor() {
 
-    this.twist = 700;
+    this.twist = 1000;
     this.uniforms = {
       time: {
         type: 'f',
         value: 0
-      },
-      alpha: {
-        type: 'f',
-        value: .7
       },
       twist: {
         type: 'f',
@@ -30,7 +26,7 @@ export default class Node {
 
   createObj() {
     // Define Geometry
-    const geometry = new THREE.SphereBufferGeometry(3000, 32, 32);
+    const geometry = new THREE.SphereBufferGeometry(3000, 64, 32);
 
     // Define Material
     const material = new THREE.RawShaderMaterial({
@@ -71,8 +67,8 @@ export default class Node {
     this.uniforms.time.value += time;
     this.uniforms.twist.value = this.twist;
     const rotation = [
-      this.radians(Math.sin(this.uniforms.time.value * 0.1) * 100),
-      this.radians(Math.sin(this.uniforms.time.value * 0.01) * 20 + 90),
+      this.radians((this.uniforms.time.value+Math.sin(this.uniforms.time.value * .2)*0.5) * 10),
+      this.radians(Math.sin(this.uniforms.time.value * .1) * 60 + 90),
       0,
     ]
     this.obj.rotation.set(rotation[0], rotation[1], rotation[2]);

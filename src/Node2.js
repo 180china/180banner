@@ -11,10 +11,6 @@ export default class Node2 {
         type: 'f',
         value: 0
       },
-      alpha: {
-        type: 'f',
-        value: .5
-      },
       twist: {
         type: 'f',
         value: this.twist
