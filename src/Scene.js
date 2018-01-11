@@ -76,48 +76,11 @@ class Scene {
 
 		this.scene.background = new THREE.TextureLoader().load('./assets/bg.jpg');
 
-
-
 		document.addEventListener('mousemove', this.onDocumentMouseMove, false);
-
 		window.addEventListener('resize', this.onWindowResize, false);
-		window.addEventListener('keydown', function(e) {
-			//key P  Fullscreen
-			if (e.keyCode === 80) {
-				var de = document.documentElement;
-				if (de.requestFullscreen) {
-					de.requestFullscreen();
-				} else if (de.mozRequestFullScreen) {
-					de.mozRequestFullScreen();
-				} else if (de.webkitRequestFullScreen) {
-					de.webkitRequestFullScreen();
-				}
-			}
-			//key S Start
-			if (e.keyCode === 83) {
-				That.goStart();
-			}
-			// //key  Choose
-			// if (e.keyCode === 32) {
-			// 	That.Choose();
-			// }
-
-			//key E EffectAble
-			if (e.keyCode === 69) {
-				EffectAble = !EffectAble;
-			}
-
-
-			//key B back to stage
-			if (e.keyCode === 66) {
-				That.goStage();
-			}
-			// console.log(e.keyCode);
-		});
 
 		clock.start();
 		this.animate();
-
 
 		That.initStage();
 	}
@@ -167,8 +130,6 @@ class Scene {
 
 	animate() {
 		requestAnimationFrame(this.animate.bind(this));
-
-
 		let deltaTime = clock.getDelta();
 		this.render(deltaTime);
 	}
@@ -184,14 +145,10 @@ class Scene {
 		if (this.floatPoints) this.floatPoints.render(dt);
 		if (this.beam) this.beam.render(dt);
 
-
-
 		mouseX += (0 - mouseX) * 0.01;
 		mouseY += (0 - mouseY) * 0.01;
 		this.camera.position.x += (mouseX - this.camera.position.x) * 0.05;
 		this.camera.position.y += (-mouseY - 400 - this.camera.position.y) * 0.05;
-
-
 
 		this.camera.lookAt(this.camera.target);
 		this.renderer.render(this.scene, this.camera);

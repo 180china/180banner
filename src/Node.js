@@ -63,7 +63,6 @@ export default class Node {
   }
   render(time) {
     this.uniforms.time.value += time;
-    // this.uniforms.twist.value = 1000+Math.sin(this.uniforms.time.value * .05)*600;
     const rotation = [
       this.radians((this.uniforms.time.value+Math.sin(this.uniforms.time.value * .2)*0.5) * 6 +180),
       this.radians(Math.sin(this.uniforms.time.value * .05) * 60 + 180),
