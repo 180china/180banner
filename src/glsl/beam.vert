@@ -23,7 +23,7 @@ void main(void) {
   vec4 mvPosition = modelViewMatrix * rotateMat * vec4(updatePosition, 1.0);
 
   // calculate interval for uv animation and setting color.
-  vec3 hsv = vec3(h + time * 0.1, 0.5, 0.9);
+  vec3 hsv = vec3(h + time * 0.1, 0.6, 0.9);
   vec3 rgb = convertHsvToRgb(hsv);
 
   vPosition = position;

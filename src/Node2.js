@@ -5,7 +5,6 @@ const glslify = require('glslify');
 export default class Node2 {
   constructor() {
 
-    this.twist = 200;
     this.uniforms = {
       time: {
         type: 'f',
@@ -13,7 +12,7 @@ export default class Node2 {
       },
       twist: {
         type: 'f',
-        value: this.twist
+        value: 200
       },
     };
     this.obj = null;
@@ -26,7 +25,7 @@ export default class Node2 {
 
   createObj() {
     // Define Geometry
-    const geometry = new THREE.RingBufferGeometry(1800, 1900, 36, 3, this.radians(180), this.radians(180));
+    const geometry = new THREE.RingBufferGeometry(1800, 1600, 36, 3, this.radians(180), this.radians(180));
 
     // Define Material
     const material = new THREE.RawShaderMaterial({
@@ -65,10 +64,10 @@ export default class Node2 {
   }
   render(time) {
     this.uniforms.time.value += time;
-    this.uniforms.twist.value = this.twist;
+    this.uniforms.twist.value = 150+Math.sin(this.uniforms.time.value * .1)*300;
     const rotation = [
-      this.radians(Math.sin(this.uniforms.time.value * 0.3) * 20 + 90),
-      this.radians(Math.sin(this.uniforms.time.value * 0.01) * 10),
+      this.radians(70),
+      0,
       0,
     ]
     this.obj.rotation.set(rotation[0], rotation[1], rotation[2]);

@@ -59,7 +59,7 @@ class Scene {
 		});
 		// this.renderer.setClearColor(0x11297a);
 		// this.renderer.setClearColor(0xffffff);
-		// this.renderer.setPixelRatio(window.devicePixelRatio);
+		this.renderer.setPixelRatio(window.devicePixelRatio);
 		this.renderer.setSize(window.innerWidth, window.innerHeight);
 		document.body.appendChild(this.renderer.domElement);
 
@@ -136,12 +136,12 @@ class Scene {
 
 		That.node = new Node();
 		That.node.createObj();
-		That.scene.add(That.node.obj);
+		// That.scene.add(That.node.obj);
 
-		// That.node2 = new Node2();
-		// That.node2.createObj();
-		// That.scene.add(That.node2.obj);
-		// That.node2.obj.position.set(0, 400, 1000);
+		That.node2 = new Node2();
+		That.node2.createObj();
+		That.scene.add(That.node2.obj);
+		That.node2.obj.position.set(0, 400, 1000);
 
 		That.floatPoints = new FloatPoints();
 		That.floatPoints.createObj();

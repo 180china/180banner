@@ -7,7 +7,7 @@ varying vec2 vUv;
 varying float vDelay;
 varying vec3 vColor;
 
-const float duration = 10.0;
+const float duration = 12.0;
 
 void main() {
   float now = mod(time + vDelay * duration, duration) / duration;

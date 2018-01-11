@@ -25,9 +25,9 @@ void main() {
   vec3 rgb2 = convertHsvToRgb(hsv2);
 
   mat4 rotateMat = computeRotateMat(
-    radians(time * speed * 0.6),
-    radians(time * speed * 0.3),
-    radians(time * speed )
+    0.,
+    0.,
+    radians(time * speed *2.)
     );
   vec4 mvPosition = modelViewMatrix * rotateMat * vec4(position, 1.0);
   float lengthToCamera = 1000.0 / length(mvPosition.xyz);
