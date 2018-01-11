@@ -11,7 +11,7 @@ export default class Node {
       },
       twist: {
         type: 'f',
-        value: this.twist
+        value: 1500
       },
     };
     this.obj = null;
@@ -63,10 +63,10 @@ export default class Node {
   }
   render(time) {
     this.uniforms.time.value += time;
-    this.uniforms.twist.value = 1000+Math.sin(this.uniforms.time.value * .05)*600;
+    // this.uniforms.twist.value = 1000+Math.sin(this.uniforms.time.value * .05)*600;
     const rotation = [
-      this.radians((this.uniforms.time.value+Math.sin(this.uniforms.time.value * .2)*0.5) * 10),
-      this.radians(Math.sin(this.uniforms.time.value * .1) * 60 + 90),
+      this.radians((this.uniforms.time.value+Math.sin(this.uniforms.time.value * .2)*0.5) * 6 +180),
+      this.radians(Math.sin(this.uniforms.time.value * .05) * 60 + 90),
       0,
     ]
     this.obj.rotation.set(rotation[0], rotation[1], rotation[2]);

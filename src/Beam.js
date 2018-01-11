@@ -17,13 +17,13 @@ export default class Beam {
         value: 0
       },
     };
-    this.instances = 200;
+    this.instances = 300;
     this.obj = null;
 
 
     // Define Geometry
     const geometry = new THREE.InstancedBufferGeometry();
-    const planeGeometry = new THREE.PlaneBufferGeometry(100, 5000, 1, 1);
+    const planeGeometry = new THREE.PlaneBufferGeometry(15, 5000, 1, 1);
 
     // Add common attributes
     geometry.addAttribute('position', planeGeometry.attributes.position);

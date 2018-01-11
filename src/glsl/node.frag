@@ -12,5 +12,5 @@ void main() {
   float diff = pow((dot(normal, light) + 1.0) / 2.0, 10.0);
 
 
-  gl_FragColor = vec4(vColor, diff*0.6);
+  gl_FragColor = vec4(vColor, diff*0.35);
 }

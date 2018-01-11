@@ -28,7 +28,6 @@ var windowHalfY = window.innerHeight / 2;
 
 
 
-
 class Scene {
 
 	constructor() {
@@ -79,10 +78,7 @@ class Scene {
 
 
 
-
 		document.addEventListener('mousemove', this.onDocumentMouseMove, false);
-		document.addEventListener('click', this.Choose, false);
-		document.addEventListener('touchend', this.Choose, false);
 
 		window.addEventListener('resize', this.onWindowResize, false);
 		window.addEventListener('keydown', function(e) {
@@ -138,11 +134,9 @@ class Scene {
 		That.scene.add(That.beam.obj);
 
 
-
 		That.node = new Node();
 		That.node.createObj();
 		That.scene.add(That.node.obj);
-		// That.node.obj.scale.set(.4, .4, .4);
 
 		// That.node2 = new Node2();
 		// That.node2.createObj();
@@ -151,7 +145,7 @@ class Scene {
 
 		That.floatPoints = new FloatPoints();
 		That.floatPoints.createObj();
-		// That.scene.add(That.floatPoints.obj);
+		That.scene.add(That.floatPoints.obj);
 
 	}
 
@@ -185,21 +179,17 @@ class Scene {
 		if (this.stats) this.stats.update();
 
 		if (this.ground) this.ground.render(dt);
-		if (this.gui) this.gui.render(dt);
-		if (this.gui) this.gui.photoPlane.lookAt(this.camera.position);
 		if (this.node) this.node.render(dt);
 		if (this.node2) this.node2.render(dt);
 		if (this.floatPoints) this.floatPoints.render(dt);
 		if (this.beam) this.beam.render(dt);
 
 
-		// if(ChooseAble)
-		{
-			var _x = mouseX;
-			var _y = mouseY;
-			this.camera.position.x += (_x - this.camera.position.x) * 0.05;
-			this.camera.position.y += (-_y-400 - this.camera.position.y) * 0.05;
-		}
+
+		mouseX += (0 - mouseX) * 0.01;
+		mouseY += (0 - mouseY) * 0.01;
+		this.camera.position.x += (mouseX - this.camera.position.x) * 0.05;
+		this.camera.position.y += (-mouseY - 400 - this.camera.position.y) * 0.05;
 
 
 
