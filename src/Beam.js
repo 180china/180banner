@@ -16,9 +16,6 @@ export default class Beam {
         type: 'f',
         value: 0
       },
-      u_texture: {
-        value: null
-      }
     };
     this.instances = 200;
     this.obj = null;
@@ -67,10 +64,6 @@ export default class Beam {
 
 
   }
-  setMap(_tex) {
-    this.uniforms.u_texture.value = _tex;
-  }
-
   render(time) {
     this.uniforms.time.value += time;
   }

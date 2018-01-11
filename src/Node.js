@@ -4,8 +4,6 @@ const glslify = require('glslify');
 
 export default class Node {
   constructor() {
-
-    this.twist = 1000;
     this.uniforms = {
       time: {
         type: 'f',
@@ -65,7 +63,7 @@ export default class Node {
   }
   render(time) {
     this.uniforms.time.value += time;
-    this.uniforms.twist.value = this.twist;
+    this.uniforms.twist.value = 1000+Math.sin(this.uniforms.time.value * .05)*600;
     const rotation = [
       this.radians((this.uniforms.time.value+Math.sin(this.uniforms.time.value * .2)*0.5) * 10),
       this.radians(Math.sin(this.uniforms.time.value * .1) * 60 + 90),

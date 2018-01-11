@@ -7,5 +7,5 @@ void main() {
   float radius = length(resolution);
   float r = 1.0 - smoothstep(0.95, 1.0, radius);
 
-  gl_FragColor = vec4(vColor, r * 0.08);
+  gl_FragColor = vec4(vColor, r * 0.06);
 }

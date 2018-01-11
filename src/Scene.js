@@ -49,7 +49,7 @@ class Scene {
 		this.scene = new THREE.Scene();
 		this.scene.add(this.camera);
 		this.camera.target = new THREE.Vector3(0, 0, 0);
-		this.camera.position.set(0, -500, 3000);
+		this.camera.position.set(0, -500, 2500);
 		this.camera.lookAt(this.camera.target);
 
 
@@ -135,9 +135,7 @@ class Scene {
 
 
 		That.beam = new Beam();
-		That.beam.setMap(That.getNameTexturel("180"));
-		// That.scene.add(That.beam.obj);
-		That.beam.obj.position.set(0, 3000, 0);
+		That.scene.add(That.beam.obj);
 
 
 
@@ -153,41 +151,7 @@ class Scene {
 
 		That.floatPoints = new FloatPoints();
 		That.floatPoints.createObj();
-		That.scene.add(That.floatPoints.obj);
-
-
-
-
-
-		That.goStage();
-
-	}
-
-
-	goStage() {
-		That.beam.setMap(That.getNameTexturel("180"));
-		
-		That.showTxt();
-
-
-		TweenMax.to(That.camera.position, 3, {
-			// y: -500,
-			z: 2500,
-			ease: Cubic.easeInOut
-		});
-
-
-		
-
-		TweenMax.to(That.ground.obj.position, 3, {
-			y: -600,
-			ease: Cubic.easeInOut
-		});
-		TweenMax.to(That.beam.obj.position, 3, {
-			y: 0,
-			ease: Cubic.easeInOut
-		});
-
+		// That.scene.add(That.floatPoints.obj);
 
 	}
 
@@ -206,41 +170,6 @@ class Scene {
 		mouseY = event.clientY - windowHalfY;
 	}
 
-	getNameTexturel(txt) {
-		var text = txt;
-		var canvas = document.createElement('canvas');
-		var context = canvas.getContext('2d');
-		var fontSize = 80;
-		canvas.width = canvas.height = 256;
-
-		// context.fillStyle="#fff";
-		// context.fillRect(0,0,canvas.width,canvas.height*4/5);
-
-		context.fillStyle = "#ffffff";
-		context.font = fontSize + "px Arial";
-		context.textAlign = "center";
-		context.fillText(text, canvas.width / 2, canvas.height / 2);
-
-		var texture = new THREE.Texture(undefined, THREE.UVMapping, THREE.RepeatWrapping, THREE.RepeatWrapping);
-		texture.image = canvas;
-		texture.needsUpdate = true;
-
-		return texture;
-	}
-	getImgData(_image, _w, _h) {
-		var imgCanvas = document.createElement('canvas');
-		imgCanvas.style.display = "block";
-		imgCanvas.id = "imgCanvas";
-		document.body.appendChild(imgCanvas);
-		imgCanvas.width = _w;
-		imgCanvas.height = _h;
-		var imgContext = imgCanvas.getContext("2d");
-		imgContext.drawImage(_image, 0, 0, _w, _h, 0, 0, _w, _h);
-		imgContext.restore();
-		var imgData = imgContext.getImageData(0, 0, _w, _h);
-		document.body.removeChild(imgCanvas);
-		return imgData.data;
-	}
 
 	animate() {
 		requestAnimationFrame(this.animate.bind(this));
@@ -280,29 +209,6 @@ class Scene {
 	}
 
 
-
-	hideTxt()
-	{
-		var txt = document.getElementById("txt");
-		TweenMax.to(txt, 3, {
-			scale: 2,
-			opacity: 0,
-			ease: Strong.easeInOut,
-			onComplete: function() {
-				txt.style.display = "none";
-			}
-		});
-	}
-	showTxt()
-	{
-		var txt = document.getElementById("txt");
-		txt.style.display = "block";
-		TweenMax.to(txt, 4, {
-			scale: 1,
-			opacity: 1,
-			ease: Strong.easeInOut
-		});
-	}
 
 }
 
