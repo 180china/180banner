@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>180</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <style>
+            body {
+                font-family: Monospace;
+                background-color: #ffffff;
+                margin: 0px;
+                overflow: hidden;
+            }
+            #loading {
+                color: #ffffff;
+                font-size: 60px;
+                position: absolute;
+                width:100%;
+                text-align: center;
+                z-index: 1;
+            }
+
+            #txt {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                -ms-transform: translate(-50%,-50%);
+                -webkit-transform: translate(-50%,-50%);
+                transform: translate(-50%,-50%);
+                width: 35%;
+                text-align: center;
+            }
+            @media (max-width:900px){
+                #txt {
+                    width: 80%;
+                }
+            }
+            @media (min-width:900px){
+                #txt {
+                    width: 50%;
+                }
+            }
+            @media (min-width:1200px){
+                #txt {
+                    width: 40%;
+                }
+            }
+            @media (min-width:1600px){
+                #txt {
+                    width: 30%;
+                }
+            }
+
+            .img1{
+                width: 100%;
+                margin-top:15%;
+                max-width: 850px; 
+            }
+            
+        </style>
+
+    </head>
+    <body>
+        <div id="loading"></div>
+        <div id="txt">
+            <img class="img1" src="./assets/txt1.png">
+        </div>
+        <script src="dist/app.js?v=0.0.1"></script>
+    </body>
+</html>
