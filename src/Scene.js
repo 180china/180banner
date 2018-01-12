@@ -40,6 +40,8 @@ class Scene {
 		this.stats = new Stats();
 		// document.body.appendChild(this.stats.dom);
 
+		this.container = document.getElementById( 'webglContainer' );
+
 		this.camera;
 		this.scene;
 		this.MainObjects;
@@ -61,7 +63,7 @@ class Scene {
 		// this.renderer.setClearColor(0xffffff);
 		this.renderer.setPixelRatio(window.devicePixelRatio);
 		this.renderer.setSize(window.innerWidth, window.innerHeight);
-		document.body.appendChild(this.renderer.domElement);
+		this.container.appendChild(this.renderer.domElement);
 
 		this.renderer.gammaInput = true;
 		this.renderer.gammaOutput = true;
