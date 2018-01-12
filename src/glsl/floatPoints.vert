@@ -17,7 +17,7 @@ const float duration = 3.0;
 
 void main() {
   float now = mod(time + delay * duration, duration) / duration;
-  float size = 6.0 * sin(now * 4.0);
+  float size = 10.0 * sin(now * 4.0);
   float blink = max(sin(now * 4.0) * 2.0 - 1.0, 0.0);
   vec3 hsv1 = vec3(time * 0.1, 0.6, 1.0);
   vec3 rgb1 = convertHsvToRgb(hsv1);

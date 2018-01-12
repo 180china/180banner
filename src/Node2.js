@@ -14,6 +14,10 @@ export default class Node2 {
         type: 'f',
         value: 200
       },
+      lineAlpha: {
+        type: 'f',
+        value: 0.06
+      },
     };
     this.obj = null;
     this.objWire = null;

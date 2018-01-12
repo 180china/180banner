@@ -31,6 +31,7 @@ void main() {
 
   vPosition = updatePosition;
   vColor = rgb;
+  
 
   gl_Position = projectionMatrix * mvPosition;
 }

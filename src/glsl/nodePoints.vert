@@ -34,5 +34,5 @@ void main() {
   vColor = rgb;
 
   gl_Position = projectionMatrix * mvPosition;
-  gl_PointSize = lengthToCamera * 10.0 * (pow(sin(position.z +rotateX * 3.0), 2.0)) + 2.0;
+  gl_PointSize = lengthToCamera * 10.0 * (pow(sin(position.z +rotateX * 3.0), 2.0)) + 0.1;
 }

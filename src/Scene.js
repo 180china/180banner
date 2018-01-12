@@ -95,22 +95,26 @@ class Scene {
 		That.ground.obj.position.set(0, -600, 0);
 
 
+		That.floatPoints = new FloatPoints();
+		That.floatPoints.createObj();
+		That.scene.add(That.floatPoints.obj);
+		That.floatPoints.obj.position.set(0, 0, -2000);
+
+
 		That.beam = new Beam();
 		That.scene.add(That.beam.obj);
 
 
 		That.node = new Node();
 		That.node.createObj();
-		// That.scene.add(That.node.obj);
+		That.scene.add(That.node.obj);
 
 		That.node2 = new Node2();
 		That.node2.createObj();
 		That.scene.add(That.node2.obj);
 		That.node2.obj.position.set(0, 400, 1000);
 
-		That.floatPoints = new FloatPoints();
-		That.floatPoints.createObj();
-		That.scene.add(That.floatPoints.obj);
+
 
 	}
 
