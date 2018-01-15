@@ -13,6 +13,10 @@ export default class Node {
         type: 'f',
         value: 1500
       },
+      lineAlpha: {
+        type: 'f',
+        value: 0.02
+      },
     };
     this.obj = null;
     this.objWire = null;
