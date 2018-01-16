@@ -74,8 +74,8 @@ class Scene {
 		// this.controls = new OrbitControls(this.camera, this.renderer.domElement);
 		// this.controls.update();
 
-		this.scene.background = new THREE.TextureLoader().load("/Public/src/img/home/bg.jpg");
-		// this.scene.background = new THREE.TextureLoader().load('./assets/bg.jpg');
+		// this.scene.background = new THREE.TextureLoader().load("/Public/src/img/home/bg.jpg");
+		this.scene.background = new THREE.TextureLoader().load('./assets/bg.jpg');
 
 		document.addEventListener('mousemove', this.onDocumentMouseMove, false);
 		window.addEventListener('resize', this.onWindowResize, false);
@@ -94,10 +94,10 @@ class Scene {
 		That.ground.obj.position.set(0, -600, 0);
 
 
-		That.floatPoints = new FloatPoints();
-		That.floatPoints.createObj();
-		That.scene.add(That.floatPoints.obj);
-		That.floatPoints.obj.position.set(0, 0, -2000);
+		// That.floatPoints = new FloatPoints();
+		// That.floatPoints.createObj();
+		// That.scene.add(That.floatPoints.obj);
+		// That.floatPoints.obj.position.set(0, 0, -2000);
 
 
 		That.beam = new Beam();

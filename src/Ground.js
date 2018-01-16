@@ -5,8 +5,8 @@ const glslify = require('glslify');
 export default class Ground {
   constructor() {
 
-    // const texture1 = new THREE.TextureLoader().load('./assets/height.jpg');
-    const texture1 = new THREE.TextureLoader().load("/Public/src/img/home/height.jpg");
+    const texture1 = new THREE.TextureLoader().load('./assets/height.jpg');
+    // const texture1 = new THREE.TextureLoader().load("/Public/src/img/home/height.jpg");
     texture1.wrapS = THREE.RepeatWrapping;
     texture1.wrapT = THREE.RepeatWrapping;
 

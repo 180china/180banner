@@ -9,7 +9,8 @@ export default class FloatPoints {
         value: 0
       },
     };
-    this.num = 30000;
+    this.num = 3000;
+    console.log(this.num);
     this.obj = null;
   }
 
