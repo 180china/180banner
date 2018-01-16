@@ -25,7 +25,7 @@ void main() {
   vec3 rgb2 = convertHsvToRgb(hsv2);
 
   mat4 rotateMat = computeRotateMat(
-    0.,
+    radians(time * speed),
     0.,
     radians(time * speed *2.)
     );
