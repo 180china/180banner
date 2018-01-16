@@ -38,7 +38,7 @@ class Scene {
 
 	start() {
 		this.stats = new Stats();
-		document.body.appendChild(this.stats.dom);
+		// document.body.appendChild(this.stats.dom);
 
 		this.container = document.getElementById( 'webglContainer' );
 
