@@ -28,7 +28,7 @@ export default class Node {
 
   createObj() {
     // Define Geometry
-    const geometry = new THREE.SphereBufferGeometry(3000, 64, 32);
+    const geometry = new THREE.SphereBufferGeometry(3000, 32, 32);
 
     // Define Material
     const material = new THREE.RawShaderMaterial({

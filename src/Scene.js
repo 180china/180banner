@@ -38,7 +38,7 @@ class Scene {
 
 	start() {
 		this.stats = new Stats();
-		// document.body.appendChild(this.stats.dom);
+		document.body.appendChild(this.stats.dom);
 
 		this.container = document.getElementById( 'webglContainer' );
 
@@ -61,7 +61,7 @@ class Scene {
 		});
 		// this.renderer.setClearColor(0x11297a);
 		// this.renderer.setClearColor(0xffffff);
-		this.renderer.setPixelRatio(window.devicePixelRatio);
+		// this.renderer.setPixelRatio(window.devicePixelRatio);
 		this.renderer.setSize(window.innerWidth, window.innerHeight);
 		this.container.appendChild(this.renderer.domElement);
 
@@ -98,7 +98,7 @@ class Scene {
 		That.floatPoints = new FloatPoints();
 		That.floatPoints.createObj();
 		That.scene.add(That.floatPoints.obj);
-		That.floatPoints.obj.position.set(0, 0, -2000);
+		That.floatPoints.obj.position.set(0, 0, -1800);
 
 
 		That.beam = new Beam();

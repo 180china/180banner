@@ -9,7 +9,7 @@ export default class FloatPoints {
         value: 0
       },
     };
-    this.num = 30000;
+    this.num = 20000;
     this.obj = null;
   }
 
@@ -50,7 +50,7 @@ export default class FloatPoints {
     for (var i = 0, ul = this.num; i < ul; i++) {
       const radian1 = this.radians(this.randomArbitrary(0, 150) - 75);
       const radian2 = this.radians(this.randomArbitrary(0, 360));
-      const radius = this.randomArbitrary(400, 1600);
+      const radius = this.randomArbitrary(500, 1200);
       const polar = this.polar(radian1, radian2, radius);
       position.setXYZ(i, polar[0], polar[1], polar[2]);
       delay.setXYZ(i, Math.random());
