@@ -74,7 +74,7 @@ class Scene {
 		// this.controls = new OrbitControls(this.camera, this.renderer.domElement);
 		// this.controls.update();
 
-		this.scene.background = new THREE.TextureLoader().load("./Public/src/img/home/bg.jpg");
+		this.scene.background = new THREE.TextureLoader().load("/Public/src/img/home/bg.jpg");
 		// this.scene.background = new THREE.TextureLoader().load('./assets/bg.jpg');
 
 		document.addEventListener('mousemove', this.onDocumentMouseMove, false);
