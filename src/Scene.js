@@ -45,8 +45,15 @@ class Scene {
 		this.camera;
 		this.scene;
 		this.MainObjects;
+		this.isMobile=false;
 
-		this.camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 50000);
+        var winWidth=window.innerWidth,winHeight=window.innerHeight;
+        this.isMobile=navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
+        if(this.isMobile){
+            winHeight=winHeight/2;
+        }
+
+		this.camera = new THREE.PerspectiveCamera(50, winWidth / winHeight, 1, 50000);
 		this.scene = new THREE.Scene();
 		this.scene.add(this.camera);
 		this.camera.target = new THREE.Vector3(0, 0, 0);
@@ -62,7 +69,7 @@ class Scene {
 		// this.renderer.setClearColor(0x11297a);
 		// this.renderer.setClearColor(0xffffff);
 		// this.renderer.setPixelRatio(window.devicePixelRatio);
-		this.renderer.setSize(window.innerWidth, window.innerHeight);
+		this.renderer.setSize(winWidth,winHeight);
 		this.container.appendChild(this.renderer.domElement);
 
 		this.renderer.gammaInput = true;
@@ -76,10 +83,27 @@ class Scene {
 		// this.controls.update();
 
 
-		this.scene.background = new THREE.TextureLoader().load('./assets/bg.jpg');
+        // this.scene.background = new THREE.TextureLoader().load("/Public/src/img/home/bg.jpg");
+        this.scene.background = new THREE.TextureLoader().load('./assets/bg.jpg');
 
 		document.addEventListener('mousemove', this.onDocumentMouseMove, false);
 		window.addEventListener('resize', this.onWindowResize, false);
+
+        if (window.DeviceOrientationEvent) {
+            //deviceOrientation：封装了方向传感器数据的事件，可以获取手机静止状态下的方向数据（设备的物理方向信息）。
+            window.addEventListener("deviceorientation", orientationHandler, false);
+        } else {
+            alert("not support deviceorientation event");
+        }
+
+        function orientationHandler(event) {
+            var _z=event.alpha;//表示设备沿z轴上的旋转角度，范围为0~360。(z轴垂直于平面)
+            var _x = event.beta;//表示设备在x轴上的旋转角度，范围为-180~180。它描述的是设备由前向后旋转的情况。
+            var _y = event.gamma;//表示设备在y轴上的旋转角度，范围为-90~90。它描述的是设备由左向右旋转的情况。
+
+            mouseX=-(_y/90)*window.innerWidth*3;
+            mouseY=(_x/180)*window.innerHeight*2;
+        }
 
 		clock.start();
 		this.animate();
@@ -121,15 +145,24 @@ class Scene {
 
 
 	onWindowResize() {
-		windowHalfX = window.innerWidth / 2;
-		windowHalfY = window.innerHeight / 2;
-		That.camera.aspect = window.innerWidth / window.innerHeight;
+
+
+        var winWidth=window.innerWidth,
+			winHeight=window.innerHeight;
+        if(this.isMobile){
+            winHeight=winHeight/2;
+        }
+
+        windowHalfX = winWidth / 2;
+        windowHalfY = winHeight / 2;
+		That.camera.aspect = winWidth / winHeight;
 		That.camera.updateProjectionMatrix();
-		That.renderer.setSize(window.innerWidth, window.innerHeight);
+		That.renderer.setSize(winWidth, winHeight);
 	}
 
 	onDocumentMouseMove(event) {
 		mouseX = event.clientX - windowHalfX;
+		console.log(mouseX);
 		mouseY = event.clientY - windowHalfY;
 	}
 

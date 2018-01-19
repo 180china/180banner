@@ -2,8 +2,6 @@
 
 import Scene from './Scene';
 
-(function() {
-
-	new Scene();
-
-})();
+document.addEventListener('DOMContentLoaded',function(){
+    new Scene();
+},false);
