@@ -93,7 +93,7 @@ class Scene {
             //deviceOrientation：封装了方向传感器数据的事件，可以获取手机静止状态下的方向数据（设备的物理方向信息）。
             window.addEventListener("deviceorientation", orientationHandler, false);
         } else {
-            alert("not support deviceorientation event");
+            //alert("not support deviceorientation event");
         }
 
         function orientationHandler(event) {
@@ -101,6 +101,8 @@ class Scene {
             var _x = event.beta;//表示设备在x轴上的旋转角度，范围为-180~180。它描述的是设备由前向后旋转的情况。
             var _y = event.gamma;//表示设备在y轴上的旋转角度，范围为-90~90。它描述的是设备由左向右旋转的情况。
 
+			if(_x>=60)_x=60;
+			if(_x<=-90)_x=-90;
             mouseX=-(_y/90)*window.innerWidth*3;
             mouseY=(_x/180)*window.innerHeight*2;
         }
