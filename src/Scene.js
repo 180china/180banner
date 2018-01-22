@@ -162,7 +162,6 @@ class Scene {
 
 	onDocumentMouseMove(event) {
 		mouseX = event.clientX - windowHalfX;
-		console.log(mouseX);
 		mouseY = event.clientY - windowHalfY;
 	}
 
