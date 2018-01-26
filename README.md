@@ -1,7 +1,7 @@
 # 180Banner
-## used ty shaders
+#### Used [WaterTian](https://github.com/WaterTian) shaders
 
-
+#### [Example](https://180china.github.io/180banner/) 
 
 ## Installation
 
