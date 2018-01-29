@@ -64,9 +64,9 @@ class Scene {
 		// init renderer
 		this.renderer = new THREE.WebGLRenderer({
 			antialias: true,
-			autoClearColor: true
+			alpha:true
 		});
-		// this.renderer.setClearColor(0x11297a);
+		// this.renderer.setClearColor(0xffffff,0.5);
 		// this.renderer.setClearColor(0xffffff);
 		// this.renderer.setPixelRatio(window.devicePixelRatio);
 		this.renderer.setSize(winWidth,winHeight);
@@ -84,7 +84,7 @@ class Scene {
 
 
         // this.scene.background = new THREE.TextureLoader().load("/Public/src/img/home/bg.jpg");
-        this.scene.background = new THREE.TextureLoader().load('./assets/bg.jpg');
+        // this.scene.background = new THREE.TextureLoader().load('./assets/bg.jpg');
 
 		document.addEventListener('mousemove', this.onDocumentMouseMove, false);
 		window.addEventListener('resize', this.onWindowResize, false);
@@ -148,12 +148,15 @@ class Scene {
 
 	onWindowResize() {
 
+		if(this.isMobile)return;
+
 
         var winWidth=window.innerWidth,
 			winHeight=window.innerHeight;
         if(this.isMobile){
             winHeight=winHeight/2;
         }
+        //console.log(winWidth,winHeight);
 
         windowHalfX = winWidth / 2;
         windowHalfY = winHeight / 2;

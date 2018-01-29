@@ -9,14 +9,20 @@
         <style>
             body {
                 font-family: Monospace;
-                background-color: #ffffff;
+                background-color: white;
                 margin: 0px;
-                overflow: hidden;
+                /*overflow: hidden;*/
             }
             #webglContainer{
                 position:relative;
                 height:auto;
+                background-color: #3e80bc;
+                background-image: -webkit-linear-gradient(#3e80bc 0%,#122979 100%); /* Safari 5.1 - 6.0 */
+                background-image: -o-linear-gradient(#3e80bc 0%,#122979 100%); /* Opera 11.1 - 12.0 */
+                background-image: -moz-linear-gradient(#3e80bc 0%,#122979 100%); /* Firefox 3.6 - 15 */
+                background-image: linear-gradient(#3e80bc 0%,#122979 100%); /* 标准的语法 */
             }
+
             #txt {
                 position: absolute;
                 left: 50%;
@@ -64,5 +70,6 @@
             </div>
         </div>
         <script src="dist/app.js?v=0.0.1"></script>
+        <!--<script src="dist/vconsole.min.js?v=0.0.1"></script>-->
     </body>
 </html>
