@@ -83,8 +83,7 @@ class Scene {
 		// this.controls.update();
 
 
-        // this.scene.background = new THREE.TextureLoader().load("/Public/src/img/home/bg.jpg");
-        // this.scene.background = new THREE.TextureLoader().load('./assets/bg.jpg');
+        this.scene.background = new THREE.TextureLoader().load('./assets/bg.jpg');
 
 		document.addEventListener('mousemove', this.onDocumentMouseMove, false);
 		window.addEventListener('resize', this.onWindowResize, false);
