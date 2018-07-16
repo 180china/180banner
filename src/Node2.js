@@ -2,7 +2,7 @@ const THREE = require('three');
 const glslify = require('glslify');
 
 
-export default class Node2 {
+class Node2 {
   constructor() {
 
     this.uniforms = {
@@ -77,3 +77,5 @@ export default class Node2 {
     this.obj.rotation.set(rotation[0], rotation[1], rotation[2]);
   }
 }
+
+export default Node2;

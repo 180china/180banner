@@ -2,7 +2,7 @@ const THREE = require('three');
 const glslify = require('glslify');
 
 
-export default class Ground {
+class Ground {
   constructor() {
 
     const texture1 = new THREE.TextureLoader().load('./assets/height.jpg');
@@ -42,3 +42,5 @@ export default class Ground {
     this.uniforms.u_time.value += time;
   }
 }
+
+export default Ground;

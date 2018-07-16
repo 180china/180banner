@@ -1,7 +1,7 @@
 const THREE = require('three');
 const glslify = require('glslify');
 
-export default class Beam {
+class Beam {
   randomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
   }
@@ -68,3 +68,6 @@ export default class Beam {
     this.uniforms.time.value += time;
   }
 }
+
+
+export default Beam;

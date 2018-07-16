@@ -1,7 +1,7 @@
 const THREE = require('three');
 const glslify = require('glslify');
 
-export default class FloatPoints {
+class FloatPoints {
   constructor() {
     this.uniforms = {
       time: {
@@ -9,7 +9,7 @@ export default class FloatPoints {
         value: 0
       },
     };
-    this.num = 2000;
+    this.num = 8000;
     this.obj = null;
   }
 
@@ -77,3 +77,6 @@ export default class FloatPoints {
     this.uniforms.time.value += time;
   }
 }
+
+
+export default FloatPoints;

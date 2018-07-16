@@ -1,22 +1,22 @@
-"use strict";
 
-// libs
 import * as THREE from 'three';
 import TweenMax from "gsap";
-var glslify = require('glslify');
 import OrbitContructor from 'three-orbit-controls';
-var OrbitControls = OrbitContructor(THREE);
 import Stats from 'stats.js';
-
 import dat from 'dat-gui';
 
 
+const glslify = require('glslify');
+const OrbitControls = OrbitContructor(THREE);
 
 const Ground = require('./Ground').default;
 const Node = require('./Node').default;
 const Node2 = require('./Node2').default;
 const FloatPoints = require('./FloatPoints').default;
 const Beam = require('./Beam').default;
+
+
+
 
 var That;
 var clock = new THREE.Clock();
@@ -25,7 +25,6 @@ var mouseX = 0,
 	mouseY = 0;
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
-
 
 
 class Scene {
@@ -123,7 +122,7 @@ class Scene {
 		That.floatPoints = new FloatPoints();
 		That.floatPoints.createObj();
 		That.scene.add(That.floatPoints.obj);
-		That.floatPoints.obj.position.set(0, 0, -1800);
+		That.floatPoints.obj.position.set(0, 0, -1200);
 
 
 		That.beam = new Beam();
@@ -138,9 +137,6 @@ class Scene {
 		That.node2.createObj();
 		That.scene.add(That.node2.obj);
 		That.node2.obj.position.set(0, 400, 1000);
-
-
-
 	}
 
 
